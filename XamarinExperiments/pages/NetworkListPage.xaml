@@ -5,11 +5,32 @@
 	x:Class="XamarinExperiments.NetworkListPage"
 	Title  ="Network">
 	<ContentPage.Content>
-		<StackLayout>
-			<Label
-				Text             ="Networks"
-				HorizontalOptions="Center"
-				VerticalOptions  ="CenterAndExpand" />
-		</StackLayout>
+		<ListView
+			x:Name      ="listView"
+			ItemSelected="OnItemSelected">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout
+							Orientation="Horizontal">
+							<Image
+								HeightRequest="50"
+								WidthRequest ="50"
+								Source       ="{Binding image}" />
+							<StackLayout
+								Orientation="Vertical">
+								<Label
+									Text     ="{Binding title}"
+									TextColor="#f35e20" />
+								<Label
+									Text             ="{Binding subtitle}"
+									HorizontalOptions="EndAndExpand"
+									TextColor        ="#503026" />
+							</StackLayout>
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
 	</ContentPage.Content>
 </ContentPage>

@@ -5,15 +5,15 @@
 	xmlns:local="clr-namespace:XamarinExperiments;assembly=XamarinExperiments"
 	x:Class="XamarinExperiments.MainPage">
 	<NavigationPage
-		Title="UI">
-		<x:Arguments>
-			<local:UIListPage />
-		</x:Arguments>
-	</NavigationPage>
-	<NavigationPage
 		Title="Network">
 		<x:Arguments>
 			<local:NetworkListPage />
+		</x:Arguments>
+	</NavigationPage>
+	<NavigationPage
+		Title="UI">
+		<x:Arguments>
+			<local:UIListPage />
 		</x:Arguments>
 	</NavigationPage>
 </TabbedPage>
