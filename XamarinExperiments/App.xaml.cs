@@ -8,7 +8,8 @@ namespace XamarinExperiments
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new XamarinExperimentsPage());
+			//MainPage = new NavigationPage(new XamarinExperimentsPage());
+			MainPage = new MainPage();
 		}
 
 		protected override void OnStart()

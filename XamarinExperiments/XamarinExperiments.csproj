@@ -31,8 +31,13 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
-    <EmbeddedResource Include="pages\XamarinExperimentsPage.xaml" />
-    <EmbeddedResource Include="pages\DetailsPage.xaml">
+    <EmbeddedResource Include="pages\MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\UIListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\NetworkListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -41,11 +46,14 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="pages\XamarinExperimentsPage.xaml.cs">
-      <DependentUpon>XamarinExperimentsPage.xaml</DependentUpon>
+    <Compile Include="pages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\DetailsPage.xaml.cs">
-      <DependentUpon>DetailsPage.xaml</DependentUpon>
+    <Compile Include="pages\UIListPage.xaml.cs">
+      <DependentUpon>UIListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\NetworkListPage.xaml.cs">
+      <DependentUpon>NetworkListPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
