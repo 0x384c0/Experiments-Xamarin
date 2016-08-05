@@ -40,6 +40,12 @@
     <EmbeddedResource Include="pages\NetworkListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="pages\Network\GoogleImagesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\Network\GoogleImagesDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -54,6 +60,12 @@
     </Compile>
     <Compile Include="pages\NetworkListPage.xaml.cs">
       <DependentUpon>NetworkListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Network\GoogleImagesPage.xaml.cs">
+      <DependentUpon>GoogleImagesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Network\GoogleImagesDetailPage.xaml.cs">
+      <DependentUpon>GoogleImagesDetailPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="pages\" />
+    <Folder Include="pages\Network\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.0.1.6495\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.0.1.6495\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

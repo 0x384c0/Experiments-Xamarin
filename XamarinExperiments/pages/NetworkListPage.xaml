@@ -6,8 +6,9 @@
 	Title  ="Network">
 	<ContentPage.Content>
 		<ListView
-			x:Name      ="listView"
-			ItemSelected="OnItemSelected">
+			x:Name             ="listView"
+			ItemSelected       ="OnItemSelected"
+			SeparatorVisibility="None">
 			<ListView.ItemTemplate>
 				<DataTemplate>
 					<ViewCell>
