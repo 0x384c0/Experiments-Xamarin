@@ -7,8 +7,8 @@
 		<StackLayout
 			Orientation="Vertical">
 			<Entry
-				Placeholder="Search image..."
-				TextChanged = "Handle_TextChanged"/>
+				x:Name     ="searchEntry"
+				Placeholder="Search image..." />
 			<ListView
 				x:Name             ="listView"
 				ItemSelected       ="OnItemSelected"
