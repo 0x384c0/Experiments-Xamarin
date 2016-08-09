@@ -35,19 +35,12 @@ namespace XamarinExperiments {
 					break;
 
 				default:
-					DisplayAlert("Tapped", title + " row was tapped", "OK");
+					Navigation.PushAsync(new LoginPage());
+					//DisplayAlert("Tapped", title + " row was tapped", "OK");
 					break;
 			}
 		}
 
-	}
-
-
-
-	class CellData {
-		public string image { get; set; }
-		public string title { get; set; }
-		public string subtitle { get; set; }
 	}
 }
 

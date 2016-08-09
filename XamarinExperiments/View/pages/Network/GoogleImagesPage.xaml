@@ -8,11 +8,16 @@
 			Orientation="Vertical">
 			<Entry
 				x:Name     ="searchEntry"
+					Text="{Binding SearchText}"
 				Placeholder="Search image..." />
 			<ListView
-				x:Name             ="listView"
-				ItemSelected       ="OnItemSelected"
-				SeparatorVisibility="None">
+				x:Name                ="listView"
+				ItemsSource           ="{Binding ItemsSource}"
+				ItemSelected          ="OnItemSelected"
+				SeparatorVisibility   ="None"
+				IsPullToRefreshEnabled="True"
+				RefreshCommand        ="{Binding RefreshCommand}"
+				IsRefreshing          ="{Binding IsRefreshing}">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
