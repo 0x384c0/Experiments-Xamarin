@@ -77,6 +77,9 @@
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\pages\Network\LoginViewModel.cs" />
+    <Compile Include="Service\GoogleImagesService.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="model\ImagesResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\" />
@@ -85,6 +88,7 @@
     <Folder Include="ViewModel\pages\" />
     <Folder Include="ViewModel\pages\Network\" />
     <Folder Include="model\" />
+    <Folder Include="Service\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
