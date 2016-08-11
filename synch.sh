@@ -1,0 +1,1 @@
+rsync -av --delete --filter=':- .gitignore' /Volumes/“ramdisk”/tmp/XamarinExperiments/ /Users/andrew/Documents/work/Xamarin/XamarinExperiments
