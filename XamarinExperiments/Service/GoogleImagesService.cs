@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace XamarinExperiments {
-	public class GoogleImagesService {
+	public class GoogleImagesService : BaseRestService {
 		public static IObservable<ImagesResponse> searchImages(string query) {
-			return BaseRestService.GetResources<ImagesResponse>();
-		}
-	}
-
-
-	class BaseRestService {
-		public static IObservable<T> GetResources<T>() {
-			throw new NotImplementedException();
+			return getHttpClientObservable<ImagesResponse>("https://www.googleapis.com/customsearch/v1", "?alt=json&cx=013770233867257397766%3Ae7fh4k86up8&key=AIzaSyD-qVniTDTaTWgqkBpbCb38LsLR-Rxj9e4&q=" + query + "&searchType=image&start=1");
 		}
 	}
 

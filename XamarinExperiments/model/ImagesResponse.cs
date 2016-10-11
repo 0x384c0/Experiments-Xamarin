@@ -1,20 +1,20 @@
 ﻿using System;
 namespace XamarinExperiments {
 	public class ImagesResponse {
-		string kind;
-		Item[] items;
+		public string kind;
+		public Item[] items;
 	}
 
 
-	class Item {
-		string kind;
-		string title;
-		Image image;
+	public class Item {
+		public string kind;
+		public string title;
+		public Image image;
 	}
 
-	class Image {
-		string thumbnailLink;
-		string contextLink;
+	public class Image {
+		public string thumbnailLink;
+		public string contextLink;
 	}
 }
 
