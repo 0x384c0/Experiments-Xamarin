@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Reactive.Linq;
 using ReactiveUI;
 using Xamarin.Forms;
+using System.Diagnostics;
 
 namespace XamarinExperiments {
 	public class GoogleImagesViewModel : BaseViewModel {
@@ -27,17 +28,21 @@ namespace XamarinExperiments {
 
 
 		void loadImages(Func<int> complete) {
-			if (searchText == null) return;
+			Debug.WriteLine("_searchText " + _searchText);
+			if (_searchText == null || _searchText == "") {
+				ItemsSource.Clear();
+				return;
+			}
 
 			GoogleImagesService
-				.searchImages(searchText)
+				.searchImages(_searchText)
 				.Subscribe(images => {
 					var itemsSource = new ObservableCollection<CellData>();
 					foreach (var item in images.items) {
 						var cellData = new CellData {
 							image = item.image.thumbnailLink,
 							title = item.title,
-							subtitle = searchText
+							subtitle = _searchText
 						};
 						itemsSource.Add(cellData);
 					}
@@ -45,9 +50,9 @@ namespace XamarinExperiments {
 				});
 
 			//ItemsSource = new ObservableCollection<CellData>{
-			//	new CellData { image = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png", title = "image 11",subtitle = searchText},
-			//	new CellData { image = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png", title = "image 2",subtitle = searchText},
-			//	new CellData { image = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png", title = "image 3",subtitle = searchText},
+			//	new CellData { image = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png", title = "image 11",subtitle = _searchText},
+			//	new CellData { image = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png", title = "image 2",subtitle = _searchText},
+			//	new CellData { image = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png", title = "image 3",subtitle = _searchText},
 			//};
 			complete();
 		}
@@ -63,10 +68,10 @@ namespace XamarinExperiments {
 			set { this.RaiseAndSetIfChanged(ref _itemsSource, value); }
 		}
 
-		string searchText;
+		string _searchText;
 		public string SearchText {
-			get { return searchText; }
-			set { this.RaiseAndSetIfChanged(ref searchText, value); }
+			get { return _searchText; }
+			set { this.RaiseAndSetIfChanged(ref _searchText, value); }
 		}
 
 		bool _isRefreshing;
