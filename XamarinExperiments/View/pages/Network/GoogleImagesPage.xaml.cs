@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Reactive.Linq;
-using ReactiveUI;
+﻿using ReactiveUI;
 using Xamarin.Forms;
 
 namespace XamarinExperiments {
@@ -17,8 +14,10 @@ namespace XamarinExperiments {
 
 		public void OnItemSelected(object sender, SelectedItemChangedEventArgs e) {
 			if (e.SelectedItem == null) return; // has been set to null, do not 'process' tapped event
+
+			Navigation.PushAsync(new GoogleImagesDetailPage(((CellData)e.SelectedItem)));
+
 			((ListView)sender).SelectedItem = null; // de-select the row
-			Navigation.PushAsync(new GoogleImagesDetailPage());
 		}
 
 		//The rest of the code below is plumbing:

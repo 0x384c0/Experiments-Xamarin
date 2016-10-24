@@ -82,6 +82,7 @@
     <Compile Include="model\ImagesResponse.cs" />
     <Compile Include="Service\GithubService.cs" />
     <Compile Include="Service\BaseRestService.cs" />
+    <Compile Include="ViewModel\pages\Network\GoogleImagesDetailViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\" />
